@@ -1,7 +1,4 @@
-FROM n8nio/n8n:alpine-2
+# беремо готовий образ із ffmpeg
+FROM dhanushreddy29/n8n-ffmpeg:latest
 
-USER root
-
-RUN apk add --no-cache ffmpeg fontconfig ttf-dejavu ttf-freefont
-
-USER node
+# не чіпаємо більше нічого
