@@ -1,14 +1,7 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:alpine-2
 
 USER root
 
-RUN apt-get update && \
-    apt-get install -y \
-      ffmpeg \
-      fontconfig \
-      fonts-dejavu-core \
-      fonts-freefont-ttf && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache ffmpeg fontconfig ttf-dejavu ttf-freefont
 
 USER node
